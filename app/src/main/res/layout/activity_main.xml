@@ -7,14 +7,13 @@
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
-    <!--Needs to be setup in the ViewPagerAdapter-->
-    <!--Also needs styling for example background color etc..-->
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <!--Needs to be setup in the ViewPager Adapter-->
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"

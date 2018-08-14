@@ -6,30 +6,45 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.company.collabexample.R;
+import com.example.company.collabexample.adapters.ListViewAdapter;
+import com.example.company.collabexample.models.Item;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Fragment2 extends Fragment {
 
-    // TODO This is Fragment 1 which will go in the second tab
-
+    // This is Fragment 2 which will go in the first tab
     public Fragment2() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
-        // Name TextView id is "place_name"
-        // Email TextView id is "place_email"
-        return textView;
+
+        View rootView = inflater.inflate(R.layout.list_view, container, false);
+
+        final ArrayList<Item> items = new ArrayList<Item>();
+        items.add(new Item("D", "d@d.com"));
+        items.add(new Item("C", "c@c.com"));
+
+        final ListViewAdapter adapter = new ListViewAdapter(getActivity(), items);
+        ListView listView = rootView.findViewById(R.id.list_view);
+        listView.setAdapter(adapter);
+
+        return listView;
     }
 
 }

@@ -1,39 +1,57 @@
 package com.example.company.collabexample.adapters;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.company.collabexample.fragments.Fragment1;
+import com.example.company.collabexample.fragments.Fragment2;
+
+// Create FragmentPagerAdapter
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    // TODO create Pager Adapter for the two tabs
+    // Create Pager Adapter for the two tabs
 
+    // Init vars
     private Context thisContext;
     private int currnetPosition = -1;
 
+    // Setup constructor
     public ViewPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         thisContext = context;
     }
 
+    // Setup 2 fragments via id
     @Override
-    public long getItemId(int position) {
+    public Fragment getItem(int position) {
         if (position == 0) {
             currnetPosition = 0;
             return new Fragment1();
-        }
-
-        if (position == 1) {
+        } else {
             currnetPosition = 1;
-            return;
+            return new Fragment2();
         }
     }
-
+    // Setup total fragment counts
     @Override
     public int getCount() {
         return 2;
     }
 
-
+    // Setpu fragment title
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        if (position == 0) {
+            return "Fragment 1";
+        } else if (position == 1) {
+            return "Fragment 2";
+        } else {
+            return "";
+        }
+    }
 }
 
