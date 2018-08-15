@@ -2,6 +2,7 @@ package com.example.company.collabexample.fragments;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,9 @@ public class Fragment3 extends Fragment {
         items.add(new Item("..........", ".........."));
         items.add(new Item("----------", "----------"));
 
+        // Hide FAB button when needed
+        FloatingActionButton fab = rootView.findViewById(R.id.fab);
+        fab.hide();
 
         final ListViewAdapter adapter = new ListViewAdapter(getActivity(), items);
         ListView listView = rootView.findViewById(R.id.list_view);
