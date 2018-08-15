@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.company.collabexample.fragments.Fragment1;
 import com.example.company.collabexample.fragments.Fragment2;
+import com.example.company.collabexample.fragments.Fragment3;
 
 // Create FragmentPagerAdapter
 public class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -30,15 +31,18 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             currnetPosition = 0;
             return new Fragment1();
-        } else {
+        } else if (position == 1){
             currnetPosition = 1;
             return new Fragment2();
+        } else {
+            currnetPosition = 2;
+            return new Fragment3();
         }
     }
     // Setup total fragment counts
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     // Setpu fragment title
@@ -49,6 +53,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             return "Fragment 1";
         } else if (position == 1) {
             return "Fragment 2";
+        } else if (position == 2) {
+            return "Fragment 3";
         } else {
             return "";
         }

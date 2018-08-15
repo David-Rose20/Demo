@@ -2,6 +2,8 @@ package com.example.company.collabexample.fragments;
 
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,9 +28,7 @@ public class Fragment2 extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-    }
+    public void onStart() { super.onStart();}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,11 +40,16 @@ public class Fragment2 extends Fragment {
         items.add(new Item("D", "d@d.com"));
         items.add(new Item("C", "c@c.com"));
 
+        // Hide FAB button when needed
+        FloatingActionButton fab = rootView.findViewById(R.id.fab);
+        fab.hide();
+
         final ListViewAdapter adapter = new ListViewAdapter(getActivity(), items);
         ListView listView = rootView.findViewById(R.id.list_view);
         listView.setAdapter(adapter);
 
-        return listView;
+
+        return rootView;
     }
 
 }
