@@ -37,8 +37,8 @@ public class Fragment3 extends Fragment {
         View rootView = inflater.inflate(R.layout.list_view, container, false);
 
         final ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item("D", "d@d.com"));
-        items.add(new Item("C", "c@c.com"));
+        items.add(new Item("..........", ".........."));
+        items.add(new Item("----------", "----------"));
 
 
         final ListViewAdapter adapter = new ListViewAdapter(getActivity(), items);
