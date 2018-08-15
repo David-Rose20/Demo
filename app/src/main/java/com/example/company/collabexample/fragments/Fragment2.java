@@ -44,7 +44,7 @@ public class Fragment2 extends Fragment {
         ListView listView = rootView.findViewById(R.id.list_view);
         listView.setAdapter(adapter);
 
-        return listView;
+        return rootView;
     }
 
 }

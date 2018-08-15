@@ -49,7 +49,7 @@ public class Fragment1 extends Fragment {
         listView.setAdapter(adapter);
 
         // Return the view
-        return listView;
+        return rootView;
     }
 
 }

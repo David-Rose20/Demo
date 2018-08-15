@@ -37,14 +37,15 @@ public class Fragment3 extends Fragment {
         View rootView = inflater.inflate(R.layout.list_view, container, false);
 
         final ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item("......", "......"));
-        items.add(new Item("------", "------"));
+        items.add(new Item("D", "d@d.com"));
+        items.add(new Item("C", "c@c.com"));
+
 
         final ListViewAdapter adapter = new ListViewAdapter(getActivity(), items);
         ListView listView = rootView.findViewById(R.id.list_view);
         listView.setAdapter(adapter);
 
-        return listView;
+        return rootView;
     }
 
 }
