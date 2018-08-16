@@ -50,7 +50,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "Fragment 1";
+            return "Timer";
         } else if (position == 1) {
             return "Fragment 2";
         } else if (position == 2) {
